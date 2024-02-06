@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Quiz Game</title>
+</head>
+
+<body>
+    <header>
+        <a href="/">
+            <h1>Quiz Game</h1>
+        </a>
+        <div class="cloud-middle">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="cloud-left">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <div id="quiz-container">
+        <div id="category-buttons">
+            <button class="category-btn" onclick="loadCategory('Science')">Science</button>
+            <button class="category-btn" onclick="loadCategory('History')">History</button>
+            <button class="category-btn" onclick="loadCategory('Geography')">Geography</button>
+            <button class="category-btn" onclick="loadCategory('Movies')">Movies</button>
+            <button class="category-btn" onclick="loadCategory('Music')">Music</button>
+            <button class="category-btn" onclick="loadCategory('Sports')">Sports</button>
+            <button class="category-btn" onclick="loadCategory('Technology')">Technology</button>
+            <button class="category-btn" onclick="loadCategory('Random')">Random</button>
+        </div>
+
+        <div id="quiz-content" style="display: none;">
+            <div id="question-container"></div>
+            <div id="score-container" class="score-container"></div>
+            <div class="btn-container">
+                <button id="next-btn" class="next-btn" onclick="nextQuestion()">Next</button>
+                <button id="try-again-btn" class="next-btn" style="display: none;" onclick="tryAgain()">Try
+                    Again</button>
+            </div>
+        </div>
+        <div class="left-tree">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
