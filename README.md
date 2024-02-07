@@ -21,7 +21,9 @@ At the end of the quiz, view your final score and try again if desired.
 **Technologies Used**
 
 HTML: Used for structuring the content of the quiz game.
+
 CSS: Applied styles for an attractive and responsive design.
+
 JavaScript: Implemented the game's logic, including question loading, user interactions, and score calculation.
 Getting Started
 
