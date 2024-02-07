@@ -248,25 +248,129 @@ a {
     }
 }
 
-@media screen and (max-width: 768px) {
-    #quiz-content {
-        max-width: 80%;
-        margin: 0 auto;
-        text-align: center;
-    }
-}
 
-.left-tree {
+
+@mixin flower-styles {
     position: absolute;
-    width: 20px;
-    height: 33px;
-    left: 33px;
-    bottom: 8px;
     display: block;
     z-index: 10;
     transform: rotate(11deg) skewX(3deg);
     transform-origin: center bottom;
     animation: moveTree 1.6s ease infinite;
+
+}
+
+@mixin flower-span-styles {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    border: 3px solid #030308;
+    background-color: #d6d6d6;
+    left: 0;
+    top: 0;
+}
+
+@mixin flower-span-2-styles {
+    border-radius: 0;
+    border: none;
+    background-color: #030308;
+}
+
+@mixin flower-span-3-styles {
+    border-radius: 0;
+    border: none;
+    background-color: #030308;
+    transform: rotate(-45deg);
+}
+
+@mixin flower-span-4-styles {
+    border-radius: 0;
+    border: none;
+    background-color: #030308;
+    transform: rotate(45deg);
+}
+
+.left-flower {
+    @include flower-styles;
+    width: 40px;
+    height: 90px;
+    left: 33px;
+    bottom: 8px;
+}
+
+
+.left-flower span {
+    @include flower-span-styles();
+    position: absolute;
+    width: 40px;
+    height: 40px;
+
+}
+
+.left-flower span:nth-child(2) {
+    @include flower-span-2-styles();
+    width: 4px;
+    height: 50px;
+    left: 18px;
+    top: 40px;
+
+}
+
+.left-flower span:nth-child(3) {
+    @include flower-span-3-styles();
+    width: 4px;
+    height: 10px;
+    left: 16px;
+    top: 40px;
+}
+
+.left-flower span:nth-child(4) {
+    @include flower-span-4-styles();
+    width: 4px;
+    height: 10px;
+    left: 20px;
+    top: 40px;
+}
+
+
+
+.right-flower {
+    @include flower-styles();
+    width: 20px;
+    height: 45px;
+    right: 110px;
+    bottom: 80px;
+}
+
+.right-flower span {
+    @include flower-span-styles();
+    width: 20px;
+    height: 20px;
+}
+
+
+.right-flower span:nth-child(2) {
+    @include flower-span-2-styles();
+    width: 2px;
+    height: 25px;
+    left: 11px;
+    top: 20px;
+}
+
+.right-flower span:nth-child(3) {
+    @include flower-span-3-styles();
+    width: 2px;
+    height: 5px;
+    left: 10px;
+    top: 20px;
+}
+
+.right-flower span:nth-child(4) {
+    @include flower-span-4-styles();
+    width: 2px;
+    height: 5px;
+    left: 12px;
+    top: 20px;
 }
 
 @keyframes moveTree {
@@ -285,83 +389,17 @@ a {
     }
 }
 
-.bird-wrapper {
-    position: absolute;
-    left: 166px;
-    bottom: 46px;
-    display: block;
-    z-index: 8;
-    animation: birdFly 3.5s ease infinite;
-    animation-delay: 0.4s;
-}
-
-.bird-wrapper.snd {
-    left: 340px;
-    bottom: 65px;
-    animation-delay: 0s;
-}
-
-
-
-@keyframes birdFly {
-    0% {
-        transform: translateY(0);
+@media screen and (max-width: 768px) {
+    #quiz-content {
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
     }
 
-    50% {
-        transform: translateY(-40px);
+    .left-flower,
+    .right-flower,
+    .cloud-middle,
+    .cloud-left {
+        display: none;
     }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.left-tree {
-    position: relative;
-    width: 40px;
-    height: 90px;
-}
-
-.left-tree span {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    left: 0;
-    top: 0;
-    border-radius: 50%;
-    border: 3px solid #030308;
-    background-color: #d6d6d6;
-}
-
-.left-tree span:nth-child(2) {
-    width: 4px;
-    height: 50px;
-    left: 18px;
-    top: 40px;
-    border-radius: 0;
-    border: none;
-    background-color: #030308;
-}
-
-.left-tree span:nth-child(3) {
-    width: 4px;
-    height: 10px;
-    left: 16px;
-    top: 40px;
-    border-radius: 0;
-    border: none;
-    background-color: #030308;
-    transform: rotate(-45deg);
-}
-
-.left-tree span:nth-child(4) {
-    width: 4px;
-    height: 10px;
-    left: 20px;
-    top: 40px;
-    border-radius: 0;
-    border: none;
-    background-color: #030308;
-    transform: rotate(45deg);
 }
